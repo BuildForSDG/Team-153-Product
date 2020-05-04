@@ -11,13 +11,13 @@ Once this repo has been setup on Codacy by the TTL, replace the above badge with
 
 This is a simple php starter repo template for setting up your project. The setup contains
 
-- Composer: For adding third party dependencies
+  - Composer: For adding third party dependencies
 
 
-- phpunit: For runnung tests
+  - phpunit: For runnung tests
 
 
-- php-cs-fixer: For formatting code to match php coding standard
+  - php-cs-fixer: For formatting code to match php coding standard
 
 
 ## Why
@@ -36,25 +36,25 @@ Run `composer install` and `composer dump-autoload` to get started.
 
 All tests should be written in the test folder.
 
-#### Hints
+### Hints
 
-- Test: `composer run test`
-- Install dependencies: `composer install <dep name>`
-- Lint: `composer run php-cs-fixer`
+ - Test: `composer run test`
+ - Install dependencies: `composer install <dep name>`
+ - Lint: `composer run php-cs-fixer`
 
 ## Authors
 
-1. Brian Tum - <https://github.com/BrianTum>
+ 1. Brian Tum - <https://github.com/BrianTum>
 
-2. Fred Nyakagwa - 
+ 2. Fred Nyakagwa - 
 
-3. John Mnyika - <https://github.com/JohnMnyika>
+ 3. John Mnyika - <https://github.com/JohnMnyika>
 
-4. Daniel Kimani - <https://github.com/suhade>
+ 4. Daniel Kimani - <https://github.com/suhade>
 
-5. Basele Stephen - TTL - https://github.com/Basele
+ 5. Basele Stephen - TTL - https://github.com/Basele
 
-6. Timothy Onyiuke - Mentor - https://github.com/timolinn
+ 6. Timothy Onyiuke - Mentor - https://github.com/timolinn
 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
