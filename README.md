@@ -6,12 +6,12 @@ Corruption in disbursement of Aid is rampant in Africa. This is a platform to au
 The Project is based on laravel.
 
 ## Authors 
-  - **[Brian Tum](https://github.com/BrianTum)**
-  - **[Fred Nyakagwa](https://github.com/nyakagwafred)**
-  - **[John Mnyika](https://github.com/JohnMnyika)**
-  - **[Daniel Kimani](https://github.com/suhade)**
-  - **[Basele Stephen TTL](https://github.com/Basele)**
-  - **[Timothy Onyiuke Mentor](https://github.com/timolinn)**
+- **[Brian Tum](https://github.com/BrianTum)**
+- **[Fred Nyakagwa](https://github.com/nyakagwafred)**
+- **[John Mnyika](https://github.com/JohnMnyika)**
+- **[Daniel Kimani](https://github.com/suhade)**
+- **[Basele Stephen TTL](https://github.com/Basele)**
+- **[Timothy Onyiuke Mentor](https://github.com/timolinn)**
 
 ##
 
