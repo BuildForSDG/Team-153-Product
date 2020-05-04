@@ -44,12 +44,12 @@ All tests should be written in the test folder.
 
 ## Authors
 
-1. Brian Tum - <https://github.com/BrianTum>
-2. Fred Nyakagwa - 
-3. John Mnyika - <https://github.com/JohnMnyika>
-4. Daniel Kimani - <https://github.com/suhade>
-5. Basele Stephen - TTL - <https://github.com/Basele>
-6. Timothy Onyiuke - Mentor - < https://github.com/timolinn>
+  1. Brian Tum - <https://github.com/BrianTum>
+  2. Fred Nyakagwa - 
+  3. John Mnyika - <https://github.com/JohnMnyika>
+  4. Daniel Kimani - <https://github.com/suhade>
+  5. Basele Stephen - TTL - <https://github.com/Basele>
+  6. Timothy Onyiuke - Mentor - < https://github.com/timolinn>
  
 
 ## Contributing
