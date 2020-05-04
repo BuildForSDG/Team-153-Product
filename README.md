@@ -18,4 +18,11 @@ If this project sounds interesting to you and you'd like to contribute, thank yo
 
 ## License
 
-MIT
+This project is licensed under the MIT License
+
+## Acknowledgments
+
+-   Hat tip to anyone whose code was used
+-   Andela Learning Community
+-   Facebook
+-   Open Classrooms
