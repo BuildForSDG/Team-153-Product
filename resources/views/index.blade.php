@@ -6,7 +6,8 @@
     <div class="container">
         <div class="masthead-subheading">aidPedia</div>
         <div class="masthead-heading text-uppercase">Equality & Transparency</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">View Courses</a>
+        <a class="btn btn-success btn-xl text-uppercase js-scroll-trigger mr-4" href="#about">Donate</a>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Apply</a>
     </div>
 </header>
 <!-- Services-->
