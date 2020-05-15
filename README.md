@@ -1,6 +1,7 @@
 ## About Project
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a002ef4aa50a4d029334e8fac94686c7)](https://app.codacy.com/gh/BuildForSDG/Team-153-Product?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-153-Product&utm_campaign=Badge_Grade_Settings)
 
+
 Corruption in disbursement of Aid is rampant in Africa. This is a platform to automate disbursement of AID
 The Project is based on laravel.
 
@@ -9,8 +10,8 @@ The Project is based on laravel.
    - **[Fred Nyakagwa](https://github.com/nyakagwafred)**
    - **[John Mnyika](https://github.com/JohnMnyika)**
    - **[Daniel Kimani](https://github.com/suhade)**
-   - **[Basele Stephen TTL](https://github.com/Basele)**
-   - **[Timothy Onyiuke Mentor](https://github.com/timolinn)**
+   - **[Basele Stephen -  Technical Team Lead](https://github.com/Basele)**
+   - **[Timothy Onyiuke  - Mentor](https://github.com/timolinn)**
 
 ## Contributing
 

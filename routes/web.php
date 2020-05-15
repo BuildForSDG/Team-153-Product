@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
+=======
+Route::get('/', function(){
+>>>>>>> origin
     return view('index');
 });
 
 Auth::routes();
 
+<<<<<<< HEAD
 /* Route::get('/home', 'HomeController@index')->name('home'); */
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+=======
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store']]);
+>>>>>>> origin
 });

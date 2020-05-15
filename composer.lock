@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "646fba0104863a919b24c21a8d78fa40",
+=======
+    "content-hash": "5cb6e369ed424d05439b41685b0d3441",
+>>>>>>> origin
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1668,6 +1672,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v7.11.0",
             "source": {
                 "type": "git",
@@ -1678,6 +1683,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/f4563bd2e0875c59a1f7967abdbe5cef7f240117",
                 "reference": "f4563bd2e0875c59a1f7967abdbe5cef7f240117",
+=======
+            "version": "v7.10.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "6e927e78aafd578d59c99608e7f0e23a5f7bfc5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6e927e78aafd578d59c99608e7f0e23a5f7bfc5a",
+                "reference": "6e927e78aafd578d59c99608e7f0e23a5f7bfc5a",
+>>>>>>> origin
                 "shasum": ""
             },
             "require": {
@@ -1816,7 +1833,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2020-05-12T14:42:24+00:00"
+=======
+            "time": "2020-05-06T15:36:00+00:00"
+>>>>>>> origin
         },
         {
             "name": "laravel/tinker",
@@ -5419,6 +5440,61 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "laravel/ui",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/15368c5328efb7ce94f35ca750acde9b496ab1b1",
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^7.0",
+                "illuminate/filesystem": "^7.0",
+                "illuminate/support": "^7.0",
+                "php": "^7.2.5"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Ui\\": "src/",
+                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel UI utilities and presets.",
+            "keywords": [
+                "laravel",
+                "ui"
+            ],
+            "time": "2020-04-29T15:06:45+00:00"
         },
         {
             "name": "mockery/mockery",

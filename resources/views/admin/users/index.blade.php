@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
-
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
-
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-=======
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -107,22 +77,43 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                            <div class="card-header">Users</div>
             
                             <div class="card-body">
-                                @if (session('resent'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ __('A fresh verification link has been sent to your email address.') }}
-                                    </div>
-                                @endif
-            
-                                {{ __('Before proceeding, please check your email for a verification link.') }}
-                                {{ __('If you did not receive the email') }},
-                                <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                                    @csrf
-                                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                                </form>
-                            </div>
+                               <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Roles</th>
+                                    <th scope="col">Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <th scope="row"> {{$user->id}}</th>
+                                            <td>{{$user->name}}</td>
+                                            <td> {{$user->email}}</td>
+                                            <td> {{$user->phone}}</td>
+                                            <td> {{ implode(', ', $user->roles()->get()->pluck('name')->toArray())  }} </td>
+                                            <td>
+                                                <a href="{{ route('admin.users.edit', $user->id ) }}"><button type="button" class="btn btn-secondary float-left">Edit</button></a>
+                                                
+                                                <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="float-left">
+                                                    @csrf
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                                </form>
+        
+                                            </td>
+                                          </tr>
+                                    @endforeach
+                                </tbody>
+                              </table>                        
+                            </div>                    
                         </div>
                     </div>
                 </div>
@@ -131,4 +122,4 @@
     </div>
 </body>
 </html>
->>>>>>> origin
+
