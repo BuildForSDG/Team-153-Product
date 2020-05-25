@@ -1,50 +1,29 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Role;
-use App\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use TCG\Voyager\Models\Role;
+use TCG\Voyager\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Auto generated seed file.
      *
      * @return void
      */
     public function run()
     {
-        User::truncate();
-        DB::table('role_user')->truncate();
+        if (User::count() == 0) {
+            $role = Role::where('name', 'admin')->firstOrFail();
 
-        $adminRole = Role::where('name', 'admin')->first();
-        $donorRole = Role::where('name', 'donor')->first();
-        $applicantRole = Role::where('name', 'applicant')->first();
-
-        $admin = User::create([
-            'name' => 'admin',
-            'email' => 'admin@aidpedia.com',
-            'password' => Hash::make('password'),
-            'phone' => '0711111111'
-        ]);
-
-        $donor = User::create([
-            'name' => 'donor',
-            'email' => 'don@aidpedia.com',
-            'password' => Hash::make('password'),
-            'phone' => '0722222222'
-        ]);
-
-        $applicant = User::create([
-            'name' => 'applicant',
-            'email' => 'applicant@aidpedia.com',
-            'password' => Hash::make('password'),
-            'phone' => '0733333333'
-        ]);
-
-        $admin->roles()->attach($adminRole);
-        $donor->roles()->attach($donorRole);
-        $applicant->roles()->attach($applicantRole);
+            User::create([
+                'name'           => 'Admin',
+                'email'          => 'admin@admin.com',
+                'password'       => bcrypt('password'),
+                'remember_token' => Str::random(60),
+                'role_id'        => $role->id,
+            ]);
+        }
     }
 }
