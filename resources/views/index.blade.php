@@ -7,7 +7,7 @@
 <div class="jumbotron jumbotron-fluid text-center text-white" style="background-image: url('img/bg1.jpg');">
     <div class="container">
         <h1 class="display-3">Equality and Transparency</h1>
-        <p class="lead">AID for those who need neeed it!.</p>
+        <p class="lead">AidPedia is an application that seeks to automate the process of disbursing aid, hence reducing the bottlenecks created by humans and reducing corruption</p>
         <hr class="my-4 bg-white">
         <a class="btn btn-primary btn-lg" href="#" role="button">Donate</a>
         <a class="btn btn-primary btn-lg" href="#" role="button">Apply</a>
@@ -132,7 +132,7 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <h3>John M</h3>
+        <h3>John M.</h3>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
         <p><i>“Hey AIDPEDIA team, words cannot express how thankful I am to have been chosen as a scholarship recipient. 
             My education has always been of upmost importance to me, and to be rewarded in this way is very humbling. 
