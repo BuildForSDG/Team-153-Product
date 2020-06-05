@@ -4,13 +4,15 @@
 
 
 {{-- Jumbotron --}}
-<div class="jumbotron jumbotron-fluid text-center text-white" style="background-image: url('img/bg1.jpg');">
+<div class="jumbotron jumbotron-fluid text-center text-white" style=" background-color: #212529; background-image: url('img/map-image.png');">
+    
     <div class="container">
-        <h1 class="display-3">Equality and Transparency</h1>
-        <p class="lead">AidPedia is an application that seeks to automate the process of disbursing aid, hence reducing the bottlenecks created by humans and reducing corruption</p>
-        <hr class="my-4 bg-white">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Donate</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Apply</a>
+        <h1 class="display-3"><span style="text-shadow: 1px 1px #FF0000;">Equality and Transparency</span></h1>
+        <p class="lead"><span style="text-decoration: underline">AidPedia</span> is an application that seeks to automate the process of disbursing aid, 
+            hence reducing the bottlenecks created by humans and reducing <span style="text-decoration: line-through;">corruption</span></p>
+        <hr class="my-4 bg-danger">
+        <a class="btn btn-primary btn-lg mr-3" href="#" role="button">Donate</a>
+        <a class="btn btn-primary btn-lg mr-3" href="#" role="button">Apply</a>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
   </div>
@@ -161,6 +163,48 @@
       </div>
     </div>
 </div>
+
+{{-- Contact Form --}}
+
+
+<div class="container text-center">
+    <hr class="my-4 bg-white">
+    <h1 class="display-5">Contact Us</h1>
+    {{-- <i class="fab fa-angellist fa-10x"></i> --}}
+    <hr class="my-4 bg-white">
+</div>
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea">
+                        <textarea rows="5" class="form-control" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
 
 
 
