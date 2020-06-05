@@ -93,10 +93,11 @@
 
         
             <div class="col-sm-3" style="width: 14rem;">
-                <img src="{{asset('HomeTheme')}}/assets/img/team/1.jpg" class="card-img-top mx-auto rounded-circle border border-success" alt="...">
+                <img src="{{asset('HomeTheme')}}/assets/img/team/dan.jpg" class="card-img-top mx-auto rounded-circle border border-success" alt="...">
                 <div class="card-body">
                     <h4>Daniel Kimani</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">I am a passionate business developer with over five years of experience, Frontend Developer with one year of experience. 
+                      Founder <a href="https://www.ohospital.co.ke/">Ohospital</a> and <a href="https://www.suhadetechvest.com/">Suhade Tech and Investment</a></p>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-twitter"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-facebook-f"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -109,7 +110,8 @@
                 <img src="{{asset('HomeTheme')}}/assets/img/team/fred.jpg" class="card-img-top mx-auto rounded-circle border border-success" alt="...">
                 <div class="card-body">
                     <h4>Fred Nyakagwa</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Full-Stack Web Developer - 5 years in HMTL5, CSS3, JS with 
+                      Bootstrap. Backend development with Node.JS, PHP and Python. Am passionate about coding and going places.</p>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-twitter"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-facebook-f"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-linkedin-in"></i></a>
