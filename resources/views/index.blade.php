@@ -58,10 +58,10 @@
 {{-- The Amazing team --}}
 
 <div class="container text-center">
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
     <h1 class="display-5">Our Amazing Team</h1>
     {{-- <i class="fab fa-angellist fa-10x"></i> --}}
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
 </div>
 
 <div class="container text-center">
@@ -125,10 +125,10 @@
 {{-- Success Stories aka testimonials --}}
 
 <div class="container text-center">
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
     <h1 class="display-5">Our Success Stories</h1>
     {{-- <i class="fab fa-angellist fa-10x"></i> --}}
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
 </div>
 
 <div class="container">
@@ -168,10 +168,10 @@
 
 
 <div class="container text-center">
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
     <h1 class="display-5">Contact Us</h1>
     {{-- <i class="fab fa-angellist fa-10x"></i> --}}
-    <hr class="my-4 bg-white">
+    <hr class="my-4 bg-danger">
 </div>
 
 <section class="page-section" id="contact">
