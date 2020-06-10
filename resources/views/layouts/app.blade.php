@@ -38,15 +38,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/" role="button" aria-haspopup="true" aria-expanded="false">
                               Home
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                          
                           </li>
 
                           <li class="nav-item dropdown ml-1">
@@ -54,9 +50,10 @@
                               Useful Links
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
+                              <a class="dropdown-item" href="/bursary">Bursary</a>
+                              <a class="dropdown-item" href="/grants">Grants</a>
+                              <a class="dropdown-item" href="/scholarships">Scholarships</a>
+                              <a class="dropdown-item" href="/donations">Donations</a>
                             </div>
                           </li>
 
@@ -65,9 +62,9 @@
                               Start Here
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
+                              <a class="dropdown-item" href="#">Apply for a Bursary</a>
+                              <a class="dropdown-item" href="#">Donate</a>
+                              <a class="dropdown-item" href="#">Pledge</a>
                             </div>
                           </li>
                         

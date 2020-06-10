@@ -20,37 +20,38 @@
   {{-- Articles --}}
 <div class="container mb-3 text-center">
     <div class="row">
-      <div class="col-sm-3 border-right border-left">
-        <h3>Bursary</h3>
-        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
-        <i class="fas fa-school fa-10x mb-3"></i>
-        <p>Bursaries can have wider-ranging benefits by helping to drive attainment and encourage retention among non-traditional students.</p>
-        
-        <a href="#" class="btn btn-success btn-md" > Read More</a>
-      </div>
+        <div class="col-sm-3 border-right border-left">
+            <h3>Bursary</h3>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+            <i class="fas fa-school fa-10x mb-3"></i>
+            <p>Bursaries can have wider-ranging benefits by helping to drive attainment and encourage retention among non-traditional students.</p>          
+            <a href="/bursary" class="btn btn-success btn-md" > Read More</a>
+        </div>
+
+        <div class="col-sm-3 border-right">
+            <h3>Grants</h3>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+            <i class="fas fa-hands-helping fa-10x mb-3"></i>
+            <p>This is a tool nonprofits use to address important issues within their communities.</p>
+            <br>
+          <a href="/grants" class="btn btn-success btn-md" > Read More</a>
+        </div>
+
       <div class="col-sm-3 border-right">
-        <h3>Grants</h3>
-        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
-        <i class="fas fa-hands-helping fa-10x mb-3"></i>
-        <p>This is a tool nonprofits use to address important issues within their communities.</p>
-          <a href="#" class="btn btn-success btn-md" > Read More</a>
-        
+            <h3>Scholarships</h3>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+            <i class="fas fa-graduation-cap fa-10x mb-3"></i>
+            <p>Scholarships provide these students with the opportunity to source money for the education.</p>
+            <br>
+            <a href="/scholarships" class="btn btn-success btn-md" > Read More</a>
       </div>
 
       <div class="col-sm-3 border-right">
-        <h3>Scholarships</h3>
-        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
-        <i class="fas fa-graduation-cap fa-10x mb-3"></i>
-        <p>Scholarships provide these students with the opportunity to source money for the education.</p>
-        <a href="#" class="btn btn-success btn-md" > Read More</a>
-      </div>
-
-      <div class="col-sm-3 border-right">
-        <h3>Donations</h3>
-        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
-        <i class="fas fa-funnel-dollar fa-10x mb-3"></i>
-        <p>Donating is a selfless act. One of the major positive effects of donating money to charity is simply feeling good about giving.</p>
-        <a href="#" class="btn btn-success btn-md" > Read More</a>
+            <h3>Donations</h3>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+            <i class="fas fa-funnel-dollar fa-10x mb-3"></i>
+            <p>Donating is a selfless act. One of the major positive effects of donating money to charity is simply feeling good about giving.</p>
+            <a href="/donations" class="btn btn-success btn-md" > Read More</a>
       </div>
     </div>
   </div>
@@ -70,7 +71,8 @@
                 <img src="{{asset('HomeTheme')}}/assets/img/team/basele.jpg" class="card-img-top mx-auto rounded-circle border border-success" alt="...">
                 <div class="card-body">
                     <h4>Stephen Basele</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"> A software Engineer with over 7 years of experience in building solutions. 
+                      A project manager who believes in building people to build solutions.</p>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-twitter"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-facebook-f"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -83,7 +85,9 @@
                 <img src="{{asset('HomeTheme')}}/assets/img/team/brian.jpg" class="card-img-top mx-auto rounded-circle border border-success" alt="...">
                 <div class="card-body">
                     <h4>Brian Tum</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">A digital marketer as well as a programmer. 
+                      Motivated and determined to bring sustainable, accoutable and valuable digital products and services. 
+                      We are the change we want.</p>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-twitter"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-facebook-f"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -116,11 +120,8 @@
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-facebook-f"></i></a>
                   <a class="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><i class="fab fa-linkedin-in"></i></a>
                 </div> 
-            </div>
-             
-        </div>
-
-        
+            </div>            
+        </div>      
     </div>
 </div>
 
@@ -207,12 +208,5 @@
         </form>
     </div>
 </section>
-
-
-
-  
-
-
-
 
 @endsection
