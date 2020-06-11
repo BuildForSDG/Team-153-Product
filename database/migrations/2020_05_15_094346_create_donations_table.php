@@ -17,10 +17,8 @@ class CreateDonationsTable extends Migration
             $table->increments('donation_id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('category_id')->on('bursary_categories')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

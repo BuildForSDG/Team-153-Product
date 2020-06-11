@@ -11,7 +11,7 @@ class CreateBursaryCategoriesTable extends Migration
         Schema::create('bursary_categories', function (Blueprint $table) {
             $table->id('category_id')->unique();
             $table->string('category_name');
-            $table->float('amount_available');
+            $table->money_format('amount_available');
             $table->timestamps();
         });
     }

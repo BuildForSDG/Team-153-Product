@@ -17,6 +17,24 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/bursary', function () {
+    return view('bursary');
+});
+
+Route::get('/scholarships', function () {
+    return view('scholarship');
+});
+
+Route::get('/donations', function () {
+    return view('donation');
+});
+
+Route::get('/grants', function () {
+    return view('grant');
+});
+
+
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
