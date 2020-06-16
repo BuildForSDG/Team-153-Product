@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2020 at 09:00 PM
+-- Generation Time: Jun 16, 2020 at 11:01 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.30
+-- PHP Version: 7.3.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `faida`
+-- Database: `aid`
 --
 
 -- --------------------------------------------------------
@@ -68,13 +68,28 @@ CREATE TABLE `applicants` (
 
 CREATE TABLE `applications` (
   `id` int(10) UNSIGNED NOT NULL,
-  `applicant_id` int(10) UNSIGNED NOT NULL,
-  `application_details` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `application_status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `aid_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  `requirements` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `channel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `account` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '''Submitted''',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `donation_id` int(10) UNSIGNED NOT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `applications`
+--
+
+INSERT INTO `applications` (`id`, `user_id`, `aid_id`, `group_id`, `requirements`, `channel`, `account`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 3, 'hfhdd', 'mpesa', '0722556677', 'Processing', '2020-06-16 09:59:54', '2020-06-16 09:59:54'),
+(2, 1, 1, 3, 'hfhdd', 'mpesa', '0722556677', 'Processing', '2020-06-16 10:02:18', '2020-06-16 10:02:18'),
+(3, 1, 2, 1, 'etdfgfgf df dfgdfgdfgd', 'mpesa', '6545655521', 'Processing', '2020-06-16 10:08:12', '2020-06-16 10:08:12'),
+(4, 1, 2, 1, 'dkldjvlj kjk jg jg j jh', 'mpesa', '0722556677', 'Processing', '2020-06-16 10:10:23', '2020-06-16 10:10:23'),
+(5, 1, 2, 1, 'dfddfdsf dfbfdg', 'mpesa', '0722556677', 'Processing', '2020-06-16 10:27:02', '2020-06-16 10:27:02'),
+(6, 1, 2, 1, 'dfddfdsf dfbfdgcccs', 'mpesa', '0722556677', 'Processing', '2020-06-16 10:27:56', '2020-06-16 10:27:56');
 
 -- --------------------------------------------------------
 
@@ -153,9 +168,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (55, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, NULL, 12),
 (56, 8, 'id', 'hidden', 'Id', 1, 1, 1, 1, 1, 1, '{}', 1),
 (57, 8, 'user_id', 'hidden', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(58, 10, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(59, 10, 'donor_id', 'hidden', 'Donor Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(60, 10, 'aid_group_id', 'hidden', 'Aid Group Id', 1, 1, 1, 1, 1, 1, '{}', 3),
+(58, 10, 'id', 'hidden', 'Id', 1, 1, 1, 0, 0, 0, '{}', 1),
+(59, 10, 'donor_id', 'hidden', 'Donor Id', 0, 1, 1, 1, 1, 1, '{}', 2),
+(60, 10, 'aid_group_id', 'hidden', 'Aid Group Id', 0, 1, 1, 1, 1, 1, '{}', 3),
 (61, 10, 'donation_name', 'text', 'Donation Name', 0, 1, 1, 1, 1, 1, '{}', 4),
 (62, 10, 'donation_description', 'text', 'Donation Description', 0, 1, 1, 1, 1, 1, '{}', 5),
 (63, 10, 'donation_amount', 'text', 'Donation Amount', 0, 1, 1, 1, 1, 1, '{}', 6),
@@ -163,12 +178,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (65, 10, 'payment_method', 'text', 'Payment Method', 0, 1, 1, 1, 1, 1, '{}', 8),
 (66, 10, 'apply_deadline', 'timestamp', 'Application Deadline', 0, 1, 1, 1, 1, 1, '{}', 9),
 (67, 10, 'donation_status', 'hidden', 'Donation Status', 0, 1, 1, 1, 1, 1, '{}', 10),
-(68, 11, 'donor_id', 'hidden', 'Donor Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(69, 11, 'user_id', 'hidden', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 2),
 (70, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (71, 12, 'group_name', 'text', 'Group Name', 1, 1, 1, 1, 1, 1, '{}', 2),
 (72, 12, 'group_detail', 'text', 'Group Detail', 0, 1, 1, 1, 1, 1, '{}', 3),
-(73, 12, 'group_image', 'text', 'Group Image', 0, 1, 1, 1, 1, 1, '{}', 4),
+(73, 12, 'group_image', 'image', 'Group Image', 0, 1, 1, 1, 1, 1, '{}', 4),
 (74, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
 (75, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
 (76, 8, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 4),
@@ -176,24 +189,30 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (78, 14, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (79, 14, 'user_id', 'hidden', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 2),
 (80, 14, 'aid_id', 'hidden', 'Aid Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(81, 14, 'application_details', 'text', 'Application Details', 0, 1, 1, 1, 1, 1, '{}', 4),
-(82, 14, 'application_status', 'text', 'Application Status', 0, 1, 1, 1, 1, 1, '{}', 5),
-(83, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
-(84, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-(85, 11, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
-(86, 11, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(87, 11, 'donor_name', 'text', 'Donor Name', 0, 1, 1, 1, 1, 1, '{}', 5),
+(83, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 10),
+(84, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
 (88, 8, 'applicant_name', 'text', 'Applicant Name', 0, 1, 1, 1, 1, 1, '{}', 6),
 (89, 8, 'applicant_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3),
-(90, 14, 'application_hasone_applicant_relationship', 'relationship', 'applicants', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Applicant\",\"table\":\"applicants\",\"type\":\"hasOne\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"applicant_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 8),
-(91, 14, 'application_hasone_donation_relationship', 'relationship', 'donations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donation\",\"table\":\"donations\",\"type\":\"hasOne\",\"column\":\"id\",\"key\":\"id\",\"label\":\"donation_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 9),
-(92, 10, 'donation_belongsto_donor_relationship', 'relationship', 'donors', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donor\",\"table\":\"donors\",\"type\":\"belongsTo\",\"column\":\"donor_id\",\"key\":\"donor_id\",\"label\":\"donor_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 11),
-(93, 10, 'donation_belongsto_aid_group_relationship', 'relationship', 'aid_groups', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AidGroup\",\"table\":\"aid_groups\",\"type\":\"belongsTo\",\"column\":\"aid_group_id\",\"key\":\"id\",\"label\":\"group_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 12),
-(94, 11, 'donor_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 6),
-(95, 11, 'donor_hasmany_donation_relationship', 'relationship', 'donations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donation\",\"table\":\"donations\",\"type\":\"hasMany\",\"column\":\"donor_id\",\"key\":\"id\",\"label\":\"donation_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 7),
-(96, 10, 'donation_hasmany_application_relationship', 'relationship', 'applications', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Application\",\"table\":\"applications\",\"type\":\"hasMany\",\"column\":\"applicant_id\",\"key\":\"id\",\"label\":\"applicant_id\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 13),
-(97, 12, 'aid_group_hasmany_donation_relationship', 'relationship', 'donations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donation\",\"table\":\"donations\",\"type\":\"hasMany\",\"column\":\"aid_group_id\",\"key\":\"id\",\"label\":\"donation_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
-(98, 8, 'applicant_hasmany_application_relationship', 'relationship', 'applications', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Application\",\"table\":\"applications\",\"type\":\"hasMany\",\"column\":\"applicant_id\",\"key\":\"id\",\"label\":\"applicant_id\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 7);
+(93, 10, 'donation_belongsto_aid_group_relationship', 'relationship', 'aid_groups', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AidGroup\",\"table\":\"aid_groups\",\"type\":\"belongsTo\",\"column\":\"aid_group_id\",\"key\":\"id\",\"label\":\"group_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 12),
+(98, 8, 'applicant_hasmany_application_relationship', 'relationship', 'applications', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Application\",\"table\":\"applications\",\"type\":\"hasMany\",\"column\":\"applicant_id\",\"key\":\"id\",\"label\":\"applicant_id\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 7),
+(105, 16, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(106, 16, 'user_id', 'text', 'User Id', 0, 1, 1, 1, 1, 1, '{}', 2),
+(107, 16, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, '{}', 3),
+(108, 16, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 4),
+(109, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
+(110, 16, 'donor_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 6),
+(112, 10, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 13),
+(113, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 14),
+(116, 10, 'donation_belongsto_donor_relationship', 'relationship', 'donors', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donor\",\"table\":\"donors\",\"type\":\"belongsTo\",\"column\":\"donor_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 11),
+(117, 10, 'donation_belongsto_aid_group_relationship_1', 'relationship', 'aid_groups', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AidGroup\",\"table\":\"aid_groups\",\"type\":\"belongsTo\",\"column\":\"aid_group\",\"key\":\"group_name\",\"label\":\"group_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":null}', 15),
+(118, 14, 'requirements', 'text', 'Requirements', 0, 1, 1, 1, 1, 1, '{}', 4),
+(119, 14, 'group_id', 'text', 'Group Id', 1, 1, 1, 1, 1, 1, '{}', 5),
+(120, 14, 'channel', 'text', 'Channel', 0, 1, 1, 1, 1, 1, '{}', 6),
+(121, 14, 'account', 'text', 'Account', 0, 1, 1, 1, 1, 1, '{}', 7),
+(122, 14, 'status', 'hidden', 'Status', 1, 1, 1, 1, 1, 1, '{}', 8),
+(123, 14, 'application_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 11),
+(124, 14, 'application_belongsto_donation_relationship', 'relationship', 'donations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Donation\",\"table\":\"donations\",\"type\":\"belongsTo\",\"column\":\"aid_id\",\"key\":\"id\",\"label\":\"donation_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 12),
+(125, 14, 'application_belongsto_aid_group_relationship', 'relationship', 'aid_groups', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AidGroup\",\"table\":\"aid_groups\",\"type\":\"belongsTo\",\"column\":\"group_id\",\"key\":\"id\",\"label\":\"group_name\",\"pivot_table\":\"aid_groups\",\"pivot\":\"0\",\"taggable\":\"0\"}', 13);
 
 -- --------------------------------------------------------
 
@@ -232,10 +251,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (7, 'aid_group', 'aid-group', 'Aid Group', 'Aid Groups', 'voyager-list', 'App\\AidGroup', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 09:38:21', '2020-05-19 10:28:44'),
 (8, 'applicants', 'applicants', 'Applicant', 'Applicants', NULL, 'App\\Applicant', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 09:40:20', '2020-05-19 14:01:02'),
 (9, 'application', 'application', 'Application', 'Applications', NULL, 'App\\Application', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-05-19 09:43:56', '2020-05-19 09:43:56'),
-(10, 'donations', 'donations', 'Donation', 'Donations', NULL, 'App\\Donation', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-05-19 09:48:34', '2020-05-19 09:48:34'),
-(11, 'donors', 'donors', 'Donor', 'Donors', NULL, 'App\\Donor', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 09:49:54', '2020-05-19 10:50:14'),
-(12, 'aid_groups', 'aid-groups', 'Aid Group', 'Aid Groups', NULL, 'App\\AidGroup', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 10:31:57', '2020-05-19 15:52:15'),
-(14, 'applications', 'applications', 'Application', 'Applications', NULL, 'App\\Application', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-05-19 10:37:19', '2020-05-19 10:37:19');
+(10, 'donations', 'donations', 'Donation', 'Donations', NULL, 'App\\Donation', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 09:48:34', '2020-06-13 15:58:41'),
+(12, 'aid_groups', 'aid-groups', 'Aid Group', 'Aid Groups', NULL, 'App\\AidGroup', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 10:31:57', '2020-06-13 06:36:20'),
+(14, 'applications', 'applications', 'Application', 'Applications', NULL, 'App\\Application', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-05-19 10:37:19', '2020-06-15 05:31:50'),
+(16, 'donors', 'donors', 'Donor', 'Donors', NULL, 'App\\Donor', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-10 11:56:05', '2020-06-10 11:56:05');
 
 -- --------------------------------------------------------
 
@@ -245,18 +264,29 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 
 CREATE TABLE `donations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `donor_id` int(10) UNSIGNED NOT NULL,
-  `aid_group_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `aid_group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `donation_name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `donation_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `donation_amount` int(11) DEFAULT NULL,
   `applicant_requirements` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `payment_method` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `apply_deadline` timestamp NULL DEFAULT NULL,
-  `donation_status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `donation_status` varchar(65) COLLATE utf8mb4_unicode_ci DEFAULT 'Active',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `donations`
+--
+
+INSERT INTO `donations` (`id`, `user_id`, `aid_group`, `donation_name`, `donation_description`, `donation_amount`, `applicant_requirements`, `payment_method`, `apply_deadline`, `donation_status`, `created_at`, `updated_at`) VALUES
+(1, 1, '3', 'Strathmore scholarship', 'A scholarship to study in Strathmore university', 50000, 'Kcse English : A, Kcse Mathematics : A, Age: 18-21, Background : humble,', 'Mpesa', '2020-06-20 15:05:00', 'Active', '2020-06-10 12:05:30', '2020-06-10 12:05:30'),
+(2, 1, '2', 'Women in Business Grant', 'This is a grant for agile and creative women in business', 1000000, 'Should be a woman with a start-up business for at least 6 than 1 year', 'Mpesa', '2020-06-13 17:15:00', 'Active', '2020-06-13 14:16:00', '2020-06-13 14:38:14'),
+(3, 1, '4', 'Food Donation', 'A food donation for aged and low income individuals', 1000, 'The individual should be above 50 years of age with low income', 'Mpesa', '2020-06-20 17:42:00', 'Active', '2020-06-13 14:42:22', '2020-06-13 14:42:22'),
+(4, 1, '1', 'High school bursary', 'A bursary for a high achieving student', 80000, 'The student should have a minimum mean grade of B', 'Bank Transfer', '2020-07-10 17:45:00', 'Active', '2020-06-13 14:45:47', '2020-06-13 14:45:47'),
+(5, 1, '2', 'Student Business Grant', 'This is a grant for entrepreneurial university students', 533000, 'Campus student with running a startup for at least 6 months.', 'mpesa', '2020-09-29 21:00:00', 'active', '2020-06-16 15:48:32', '2020-06-16 15:48:32');
 
 -- --------------------------------------------------------
 
@@ -265,12 +295,19 @@ CREATE TABLE `donations` (
 --
 
 CREATE TABLE `donors` (
-  `donor_id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `donor_name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `donors`
+--
+
+INSERT INTO `donors` (`id`, `user_id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 3, 'The Don', '2020-06-10 11:59:57', '2020-06-10 11:59:57');
 
 -- --------------------------------------------------------
 
@@ -335,7 +372,7 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-05-15 15:53:46', '2020-05-15 15:53:46', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 9, '2020-05-15 15:53:46', '2020-05-19 10:54:54', 'voyager.media.index', NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 9, '2020-05-15 15:53:46', '2020-06-10 11:58:40', 'voyager.media.index', NULL),
 (3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2020-05-15 15:53:46', '2020-05-15 15:53:46', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2020-05-15 15:53:46', '2020-05-15 15:53:46', 'voyager.roles.index', NULL),
 (5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 11, '2020-05-15 15:53:46', '2020-05-19 10:53:57', NULL, NULL),
@@ -344,13 +381,13 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-05-15 15:53:46', '2020-05-19 05:49:12', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-05-15 15:53:46', '2020-05-19 05:49:12', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 12, '2020-05-15 15:53:46', '2020-05-19 10:53:57', 'voyager.settings.index', NULL),
-(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 10, '2020-05-15 15:53:52', '2020-05-19 10:54:50', 'voyager.pages.index', NULL),
+(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 10, '2020-05-15 15:53:52', '2020-06-10 11:58:40', 'voyager.pages.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2020-05-15 15:53:54', '2020-05-19 05:49:12', 'voyager.hooks', NULL),
 (15, 1, 'Aid Groups', '', '_self', 'voyager-list', '#000000', NULL, 4, '2020-05-19 09:38:21', '2020-05-19 15:54:23', 'voyager.aid-groups.index', 'null'),
 (16, 1, 'Applicants', '', '_self', 'voyager-people', '#000000', NULL, 5, '2020-05-19 09:40:20', '2020-05-19 11:05:27', 'voyager.applicants.index', 'null'),
-(17, 1, 'Applications', '', '_self', 'voyager-mail', '#000000', NULL, 6, '2020-05-19 09:43:56', '2020-05-19 11:06:05', 'voyager.application.index', 'null'),
-(18, 1, 'Donations', '', '_self', 'voyager-rocket', '#000000', NULL, 8, '2020-05-19 09:48:34', '2020-05-19 11:09:05', 'voyager.donations.index', 'null'),
-(19, 1, 'Donors', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-05-19 09:49:54', '2020-05-19 11:08:31', 'voyager.donors.index', 'null');
+(17, 1, 'Applications', '', '_self', 'voyager-mail', '#000000', NULL, 6, '2020-05-19 09:43:56', '2020-06-14 19:05:53', 'voyager.applications.index', 'null'),
+(18, 1, 'Donations', '', '_self', 'voyager-rocket', '#000000', NULL, 8, '2020-05-19 09:48:34', '2020-06-10 11:58:40', 'voyager.donations.index', 'null'),
+(23, 1, 'Donors', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-06-10 11:56:05', '2020-06-10 11:59:33', 'voyager.donors.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -512,11 +549,6 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (59, 'edit_donations', 'donations', '2020-05-19 09:48:34', '2020-05-19 09:48:34'),
 (60, 'add_donations', 'donations', '2020-05-19 09:48:34', '2020-05-19 09:48:34'),
 (61, 'delete_donations', 'donations', '2020-05-19 09:48:34', '2020-05-19 09:48:34'),
-(62, 'browse_donors', 'donors', '2020-05-19 09:49:54', '2020-05-19 09:49:54'),
-(63, 'read_donors', 'donors', '2020-05-19 09:49:54', '2020-05-19 09:49:54'),
-(64, 'edit_donors', 'donors', '2020-05-19 09:49:54', '2020-05-19 09:49:54'),
-(65, 'add_donors', 'donors', '2020-05-19 09:49:54', '2020-05-19 09:49:54'),
-(66, 'delete_donors', 'donors', '2020-05-19 09:49:54', '2020-05-19 09:49:54'),
 (67, 'browse_aid_groups', 'aid_groups', '2020-05-19 10:31:58', '2020-05-19 10:31:58'),
 (68, 'read_aid_groups', 'aid_groups', '2020-05-19 10:31:58', '2020-05-19 10:31:58'),
 (69, 'edit_aid_groups', 'aid_groups', '2020-05-19 10:31:58', '2020-05-19 10:31:58'),
@@ -526,7 +558,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (73, 'read_applications', 'applications', '2020-05-19 10:37:19', '2020-05-19 10:37:19'),
 (74, 'edit_applications', 'applications', '2020-05-19 10:37:19', '2020-05-19 10:37:19'),
 (75, 'add_applications', 'applications', '2020-05-19 10:37:19', '2020-05-19 10:37:19'),
-(76, 'delete_applications', 'applications', '2020-05-19 10:37:19', '2020-05-19 10:37:19');
+(76, 'delete_applications', 'applications', '2020-05-19 10:37:19', '2020-05-19 10:37:19'),
+(82, 'browse_donors', 'donors', '2020-06-10 11:56:05', '2020-06-10 11:56:05'),
+(83, 'read_donors', 'donors', '2020-06-10 11:56:05', '2020-06-10 11:56:05'),
+(84, 'edit_donors', 'donors', '2020-06-10 11:56:05', '2020-06-10 11:56:05'),
+(85, 'add_donors', 'donors', '2020-06-10 11:56:05', '2020-06-10 11:56:05'),
+(86, 'delete_donors', 'donors', '2020-06-10 11:56:05', '2020-06-10 11:56:05');
 
 -- --------------------------------------------------------
 
@@ -636,15 +673,6 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (60, 3),
 (61, 1),
 (61, 3),
-(62, 1),
-(62, 2),
-(62, 3),
-(63, 1),
-(63, 2),
-(63, 3),
-(64, 1),
-(65, 1),
-(66, 1),
 (67, 1),
 (67, 2),
 (67, 3),
@@ -663,7 +691,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (74, 1),
 (74, 3),
 (75, 1),
-(76, 1);
+(76, 1),
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1),
+(86, 1);
 
 -- --------------------------------------------------------
 
@@ -833,9 +866,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users\\May2020\\5JMt4ZyEq7J0fol4ZZFZ.png', NULL, '$2y$10$DBcQvZilmZqUBboB.Ac04.h1AxFu4WpGZoMuexmpp4iCe8JY8XIK6', 'r2kUS6wVQZpGzefld9OU3Zz2PQ6bkWX9WKQaZLSd8JxYiWwId7l0e2XlZHoH', '{\"locale\":\"en\"}', '2020-05-15 15:53:50', '2020-05-19 14:51:15'),
+(1, 1, 'Admin', 'admin@admin.com', 'users\\May2020\\5JMt4ZyEq7J0fol4ZZFZ.png', NULL, '$2y$10$DBcQvZilmZqUBboB.Ac04.h1AxFu4WpGZoMuexmpp4iCe8JY8XIK6', 'me2yjlx225939hPyUE6lm7SWvJ5FzS7g7pYviIzSZuiwTHLtQTh62GmJ81pg', '{\"locale\":\"en\"}', '2020-05-15 15:53:50', '2020-05-19 14:51:15'),
 (2, 2, 'test', 'utest@aidpedia.com', 'users/default.png', NULL, '$2y$10$nl7wG0EYlRlrAwLA4vhHWeEs7u8tFVKBZRr4dK84odGbCe3UryfE2', NULL, NULL, '2020-05-19 13:35:33', '2020-05-19 13:35:33'),
-(3, 3, 'The Don', 'donor@aidpedia.com', 'users\\May2020\\Gp4cND5DDrEvszsUPaJa.jpg', NULL, '$2y$10$dcFDzvj.f2H/P8XIu/5OBOtpn/bK1RQw/5djzOOpAGGd.H.DbaR7e', NULL, '{\"locale\":\"en\"}', '2020-05-19 14:50:51', '2020-05-19 14:50:51');
+(3, 3, 'The Don', 'donor@aidpedia.com', 'users\\May2020\\Gp4cND5DDrEvszsUPaJa.jpg', NULL, '$2y$10$dcFDzvj.f2H/P8XIu/5OBOtpn/bK1RQw/5djzOOpAGGd.H.DbaR7e', NULL, '{\"locale\":\"en\"}', '2020-05-19 14:50:51', '2020-05-19 14:50:51'),
+(4, 2, 'test', 'user@test.com', 'users/default.png', NULL, '$2y$10$FP8tmS83I.VdPuWIuBMaCukhEiTLcnRBG01NnrWA1R6nrWtglak8q', NULL, NULL, '2020-06-05 14:49:22', '2020-06-05 14:49:22');
 
 -- --------------------------------------------------------
 
@@ -877,8 +911,7 @@ ALTER TABLE `applicants`
 --
 ALTER TABLE `applications`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `application_user_id_index` (`applicant_id`),
-  ADD KEY `applications_donation_id_index` (`donation_id`);
+  ADD KEY `application_user_id_index` (`user_id`);
 
 --
 -- Indexes for table `data_rows`
@@ -899,16 +932,13 @@ ALTER TABLE `data_types`
 -- Indexes for table `donations`
 --
 ALTER TABLE `donations`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `donations_donor_id_index` (`donor_id`),
-  ADD KEY `donations_aid_group_id_index` (`aid_group_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donors`
 --
 ALTER TABLE `donors`
-  ADD PRIMARY KEY (`donor_id`),
-  ADD KEY `donors_user_id_index` (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -1028,31 +1058,31 @@ ALTER TABLE `applicants`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `donations`
 --
 ALTER TABLE `donations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `donor_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1070,7 +1100,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1088,7 +1118,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -1118,7 +1148,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

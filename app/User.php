@@ -36,4 +36,10 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // User can have many tasks
+    public function applications()
+    {
+        return $this->hasMany('App\Application');
+    }
 }
