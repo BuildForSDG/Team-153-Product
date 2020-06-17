@@ -13,27 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/bursary', function () {
-    return view('bursary');
-});
-
-Route::get('/scholarships', function () {
-    return view('scholarship');
-});
-
-Route::get('/donations', function () {
-    return view('donation');
-});
-
-Route::get('/grants', function () {
-    return view('grant');
-});
-
-
+Route::get('/', 'HomeController@index');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -43,3 +23,11 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/aids', 'AidsController@aids')->name('aids');
+Route::get('/aids/search', 'AidsController@search')->name('aids.search');
+Route::post('/apply', 'ApplyController@apply')->middleware('auth');
+Route::get('/donation/{id}', 'AidsController@show')->middleware('auth');
+Route::get('/activity', 'ActivityController@index')->name('activity')->middleware('auth');
+Route::get('/application/{id}', 'ActivityController@show')->middleware('auth');
+Route::get('/donate', 'DonationController@create')->name('donate')->middleware('auth');
+Route::post('/donate', 'DonateController@donate')->middleware('auth');
